@@ -1,0 +1,42 @@
+<div class="center-container">
+  <ion-card color="secondary">
+    <ion-card-header class="ion-text-center">
+      <ion-card-title>To Do List</ion-card-title>
+      <ion-card-subtitle>Add your daily tasks!</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-row>
+        <ion-col size="8">
+          <ion-input label="Task" label-placement="floating" fill="outline" placeholder="Enter the task"
+            [(ngModel)]="newTodoTitle">
+          </ion-input>
+        </ion-col>
+        <ion-col size="4">
+          <ion-button expand="block" (click)="addTodo()">Add</ion-button>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-list *ngIf="todos.length > 0" class="ion-margin-top custom-list">
+        <ion-item *ngFor="let todo of todos; let i = index">
+          <!-- <ion-checkbox slot="start" [(ngModel)]="todo.isDone" (ionChange)="toggleTodo(todo.id)">    //In ngmodel line through style not work instanly as it twoway. Also if used without line through style have to double click checkbox each time. using checked fit here also, can be used with line thrrough styling
+          </ion-checkbox> -->
+          <ion-checkbox slot="start" [checked]="todo.isDone" (ionChange)="toggleTodo(todo.id)">
+          </ion-checkbox>
+
+          <ion-label [ngStyle]="{ 'text-decoration': todo.isDone ? 'line-through' : 'none' }">
+            {{ todo.task }}
+          </ion-label>
+          <!-- <ion-label>
+            {{ todo.task }}
+          </ion-label> -->
+
+          <ion-button fill="clear" color="danger" slot="end" (click)="deleteTodo(todo.id)">
+            <ion-icon name="trash-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</div>

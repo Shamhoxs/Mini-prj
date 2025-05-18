@@ -1,0 +1,26 @@
+ion-card {
+  border-radius: 8px;
+}
+
+ion-card-title, ion-card-subtitle {
+  text-align: center;
+}
+
+ion-item {
+  background: rgb(187, 198, 227);
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;      /* Center vertically */
+  height: 100vh;            /* Make sure it takes full screen height */
+  flex-direction: column;   /* Ensure content is stacked vertically */
+}
+
+.custom-list {
+  background: #b1c0d7;
+  border-radius: 10px;
+  padding: 5px;
+}
+
