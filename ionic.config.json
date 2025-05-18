@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "toDoApp",
+=======
+  "name": "ionic-todo-app",
+>>>>>>> 9063bc0 (Initial commit)
   "integrations": {
     "capacitor": {}
   },
